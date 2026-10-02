@@ -1,0 +1,39 @@
+{
+    "name": "pasupathy-manikam-jr/laravel-einvoice",
+    "description": "LHDN MyInvois e-invoicing for Laravel apps",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "illuminate/support": "^13.34",
+        "illuminate/database": "^13.34",
+        "illuminate/queue": "^13.34",
+        "jiannius/myinvois": "^1.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^11.3",
+        "phpunit/phpunit": "^12.5",
+        "laravel/pint": "^1.27",
+        "larastan/larastan": "^3.9"
+    },
+    "autoload": {
+        "psr-4": { "Oriclab\\EInvoice\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Oriclab\\EInvoice\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Oriclab\\EInvoice\\EInvoiceServiceProvider"]
+        }
+    },
+    "scripts": {
+        "lint": "pint --test",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "test": "phpunit",
+        "ci:check": ["@lint", "@analyse", "@test"]
+    },
+    "config": { "sort-packages": true },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

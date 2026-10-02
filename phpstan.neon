@@ -1,0 +1,11 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+parameters:
+    paths: [src]
+    level: 6
+    ignoreErrors:
+        # Code resolves its tables through __callStatic (vendor magic, no @method tags).
+        - message: '#Jiannius\\Myinvois\\Helpers\\Code::#'
+          identifier: staticMethod.notFound
+        # HasEInvoices is for host apps.
+        - identifier: trait.unused
