@@ -2,6 +2,7 @@
 
 namespace Oriclab\EInvoice\Tests;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Jiannius\Myinvois\Helpers\Signature;
 use Jiannius\Myinvois\Helpers\UBL;
@@ -109,6 +110,7 @@ class JianniusDriverTest extends TestCase
     public function test_token_is_cached_as_a_string_so_hardened_caches_can_read_it(): void
     {
         config(['cache.default' => 'file', 'cache.serializable_classes' => false]);
+        Cache::flush(); // the file store outlives the test run
         Http::fake([
             '*/connect/token' => Http::response(['access_token' => 'tok', 'expires_in' => 3600]),
             '*/documents/UUID-1/details' => Http::response(['status' => 'Submitted']),

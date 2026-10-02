@@ -1,13 +1,13 @@
-# laravel-einvoice
+# E-invoice SDK
 
-Submit e-invoices to Malaysia's LHDN MyInvois from any Laravel 13 app (PHP 8.4+). Each company submits under its own TIN, credentials and signing certificate.
+E-invoice SDK for Malaysia's LHDN MyInvois, shared by all projects. Requires PHP 8.4+ and Laravel 13. Each company submits under its own TIN, credentials and signing certificate.
 
 Under the hood it uses [`jiannius/myinvois`](https://github.com/jiannius/myinvois) for UBL building, XAdES signing and auth, behind our own `EInvoiceDriver` interface so the SDK can be swapped without touching host apps.
 
 ## Install
 
 ```bash
-composer require pasupathy-manikam-jr/laravel-einvoice
+composer require pasupathy-manikam-jr/e-invoice-sdk
 php artisan migrate
 ```
 

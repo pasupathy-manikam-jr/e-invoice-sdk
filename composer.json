@@ -1,6 +1,6 @@
 {
-    "name": "pasupathy-manikam-jr/laravel-einvoice",
-    "description": "LHDN MyInvois e-invoicing for Laravel apps",
+    "name": "pasupathy-manikam-jr/e-invoice-sdk",
+    "description": "E-invoice SDK for LHDN MyInvois, used by all projects",
     "type": "library",
     "license": "MIT",
     "require": {
