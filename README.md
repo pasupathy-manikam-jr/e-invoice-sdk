@@ -128,3 +128,7 @@ Set `EINVOICE_DRIVER=fake`, or bind `Oriclab\EInvoice\Drivers\FakeDriver` to `Or
 ```bash
 composer ci:check   # pint, larastan, phpunit (no network or credentials needed)
 ```
+
+## Credits
+
+Built on [`jiannius/myinvois`](https://github.com/jiannius/myinvois) (MIT), installed as a normal Composer dependency. This is not a fork and copies none of its code: we call its UBL builder, XAdES signer, validator and LHDN code tables, and `Drivers\MyinvoisClient` extends its client only to cache the access token as a plain string (its own cache stores a Carbon object that Laravel 13 refuses to unserialize). Everything else here — the driver contract, data objects, tables, jobs, events and idempotency — is this package's own code. Thanks to Jiannius Technologies for the SDK.
