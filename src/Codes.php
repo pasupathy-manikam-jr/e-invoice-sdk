@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice;
+namespace EInvoiceSdk;
 
 use Jiannius\Myinvois\Helpers\Code;
 

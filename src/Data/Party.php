@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Data;
+namespace EInvoiceSdk\Data;
 
 /**
  * Supplier or buyer. Provide the TIN plus one of BRN / NRIC / passport / army ID.

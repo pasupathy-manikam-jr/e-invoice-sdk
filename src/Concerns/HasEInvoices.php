@@ -1,9 +1,9 @@
 <?php
 
-namespace Oriclab\EInvoice\Concerns;
+namespace EInvoiceSdk\Concerns;
 
+use EInvoiceSdk\Models\EInvoiceDocument;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
 
 /** Optional convenience for host models that implement EInvoiceable. */
 trait HasEInvoices

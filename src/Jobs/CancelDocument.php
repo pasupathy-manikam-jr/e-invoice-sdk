@@ -1,14 +1,14 @@
 <?php
 
-namespace Oriclab\EInvoice\Jobs;
+namespace EInvoiceSdk\Jobs;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Events\DocumentCancelled;
+use EInvoiceSdk\Models\EInvoiceDocument;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Events\DocumentCancelled;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
 use Throwable;
 
 class CancelDocument implements ShouldBeUnique, ShouldQueue

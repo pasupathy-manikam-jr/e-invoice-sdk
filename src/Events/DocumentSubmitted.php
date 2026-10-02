@@ -1,10 +1,10 @@
 <?php
 
-namespace Oriclab\EInvoice\Events;
+namespace EInvoiceSdk\Events;
 
+use EInvoiceSdk\Models\EInvoiceDocument;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
 
 class DocumentSubmitted
 {

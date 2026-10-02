@@ -30,7 +30,7 @@ Run a queue worker. Everything that talks to LHDN runs in queued jobs.
 One `einvoice_settings` row per company per environment. Credentials are stored with Laravel's encrypted casts.
 
 ```php
-use Oriclab\EInvoice\Models\EInvoiceSetting;
+use EInvoiceSdk\Models\EInvoiceSetting;
 
 EInvoiceSetting::create([
     'tin' => 'C12345678901',
@@ -51,10 +51,10 @@ To go live for a company, create its `production` row and call `$setting->activa
 ## Host model
 
 ```php
-use Oriclab\EInvoice\Concerns\HasEInvoices;
-use Oriclab\EInvoice\Contracts\EInvoiceable;
-use Oriclab\EInvoice\Data\{Document, LineItem, Party, Tax};
-use Oriclab\EInvoice\Enums\DocumentType;
+use EInvoiceSdk\Concerns\HasEInvoices;
+use EInvoiceSdk\Contracts\EInvoiceable;
+use EInvoiceSdk\Data\{Document, LineItem, Party, Tax};
+use EInvoiceSdk\Enums\DocumentType;
 
 class Invoice extends Model implements EInvoiceable
 {
@@ -83,7 +83,7 @@ class Invoice extends Model implements EInvoiceable
 }
 ```
 
-Codes (states, countries, taxes, classifications, units, MSIC) follow the LHDN code tables. For forms, `Oriclab\EInvoice\Codes` gives `classifications()`, `taxTypes()` and `states()` as `code => label`, and `Codes::state('W.P. Kuala Lumpur')` resolves loosely written state names (the driver does this for you).
+Codes (states, countries, taxes, classifications, units, MSIC) follow the LHDN code tables. For forms, `EInvoiceSdk\Codes` gives `classifications()`, `taxTypes()` and `states()` as `code => label`, and `Codes::state('W.P. Kuala Lumpur')` resolves loosely written state names (the driver does this for you).
 
 - **Credit / debit / refund notes**: set `originalNumber` and `originalUuid` (the original's `EInvoiceDocument::uuid`).
 - **Consolidated monthly submission**: a host model for the month's batch, buyer TIN `EI00000000010`, every line classified `004`, `consolidated: true`.
@@ -91,7 +91,7 @@ Codes (states, countries, taxes, classifications, units, MSIC) follow the LHDN c
 ## Usage
 
 ```php
-use Oriclab\EInvoice\EInvoice;
+use EInvoiceSdk\EInvoice;
 
 $einvoice = app(EInvoice::class);
 
@@ -117,11 +117,11 @@ $record->logs;            // every attempt with request summary, raw response an
 | `DocumentRejected` | LHDN rejected it; `$event->errors` lists why |
 | `DocumentCancelled` | Cancelled via the package or the MyInvois portal |
 
-All are in `Oriclab\EInvoice\Events` and carry `$event->document` (an `EInvoiceDocument`).
+All are in `EInvoiceSdk\Events` and carry `$event->document` (an `EInvoiceDocument`).
 
 ## Testing in host apps
 
-Set `EINVOICE_DRIVER=fake`, or bind `Oriclab\EInvoice\Drivers\FakeDriver` to `Oriclab\EInvoice\Contracts\EInvoiceDriver` and script its public properties (`submitResult`, `statusResult`, `existingUuid`, ...).
+Set `EINVOICE_DRIVER=fake`, or bind `EInvoiceSdk\Drivers\FakeDriver` to `EInvoiceSdk\Contracts\EInvoiceDriver` and script its public properties (`submitResult`, `statusResult`, `existingUuid`, ...).
 
 ## Development
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Exceptions;
+namespace EInvoiceSdk\Exceptions;
 
 use RuntimeException;
 

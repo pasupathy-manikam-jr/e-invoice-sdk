@@ -1,15 +1,15 @@
 <?php
 
-namespace Oriclab\EInvoice\Tests;
+namespace EInvoiceSdk\Tests;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Drivers\FakeDriver;
+use EInvoiceSdk\EInvoiceServiceProvider;
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Models\EInvoiceSetting;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Drivers\FakeDriver;
-use Oriclab\EInvoice\EInvoiceServiceProvider;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Models\EInvoiceSetting;
 
 abstract class TestCase extends Orchestra
 {

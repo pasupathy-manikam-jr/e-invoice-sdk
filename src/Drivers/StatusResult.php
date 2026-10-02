@@ -1,9 +1,9 @@
 <?php
 
-namespace Oriclab\EInvoice\Drivers;
+namespace EInvoiceSdk\Drivers;
 
 use DateTimeInterface;
-use Oriclab\EInvoice\Enums\Status;
+use EInvoiceSdk\Enums\Status;
 
 final readonly class StatusResult
 {

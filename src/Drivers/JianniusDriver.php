@@ -1,23 +1,23 @@
 <?php
 
-namespace Oriclab\EInvoice\Drivers;
+namespace EInvoiceSdk\Drivers;
 
+use EInvoiceSdk\Codes;
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Data\Document;
+use EInvoiceSdk\Data\LineItem;
+use EInvoiceSdk\Data\Party;
+use EInvoiceSdk\Data\Tax;
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Exceptions\EInvoiceException;
+use EInvoiceSdk\Models\EInvoiceSetting;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Carbon;
 use Jiannius\Myinvois\Helpers\Code;
 use Jiannius\Myinvois\Helpers\Signature;
 use Jiannius\Myinvois\Helpers\UBL;
 use Jiannius\Myinvois\Helpers\Validator;
-use Oriclab\EInvoice\Codes;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Data\Document;
-use Oriclab\EInvoice\Data\LineItem;
-use Oriclab\EInvoice\Data\Party;
-use Oriclab\EInvoice\Data\Tax;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
-use Oriclab\EInvoice\Models\EInvoiceSetting;
 
 /**
  * Wraps jiannius/myinvois. We use its UBL builder, XAdES signer, validator, token cache and rate limiter,

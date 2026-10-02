@@ -9,7 +9,7 @@ No credentials, certificates or personal identifiers are in this repo. Sandbox c
 | Question | Decision |
 |---|---|
 | Package name | `pasupathy-manikam-jr/e-invoice-sdk` (public: github.com/pasupathy-manikam-jr/e-invoice-sdk) |
-| Namespace | `Oriclab\EInvoice` |
+| Namespace | `EInvoiceSdk` |
 | PHP / Laravel | PHP `^8.4`, Laravel `^13.34` (latest). Local PHP is 8.4.17 via MAMP |
 | SDK | `jiannius/myinvois` `^1.2` (installed v1.2.9) |
 | Licence | MIT |

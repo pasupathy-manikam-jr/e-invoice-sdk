@@ -1,11 +1,11 @@
 <?php
 
-namespace Oriclab\EInvoice\Models;
+namespace EInvoiceSdk\Models;
 
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Exceptions\EInvoiceException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
 
 /**
  * @property int $id

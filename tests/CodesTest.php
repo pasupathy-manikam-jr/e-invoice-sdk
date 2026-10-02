@@ -1,8 +1,8 @@
 <?php
 
-namespace Oriclab\EInvoice\Tests;
+namespace EInvoiceSdk\Tests;
 
-use Oriclab\EInvoice\Codes;
+use EInvoiceSdk\Codes;
 
 class CodesTest extends TestCase
 {

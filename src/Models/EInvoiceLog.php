@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Models;
+namespace EInvoiceSdk\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

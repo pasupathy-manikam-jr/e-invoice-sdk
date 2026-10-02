@@ -1,13 +1,13 @@
 <?php
 
-namespace Oriclab\EInvoice\Drivers;
+namespace EInvoiceSdk\Drivers;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Data\Document;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Exceptions\EInvoiceException;
+use EInvoiceSdk\Models\EInvoiceSetting;
 use Illuminate\Support\Str;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Data\Document;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
-use Oriclab\EInvoice\Models\EInvoiceSetting;
 use Throwable;
 
 /** In-memory driver for tests and local development. Set the public properties to script LHDN's answers. */

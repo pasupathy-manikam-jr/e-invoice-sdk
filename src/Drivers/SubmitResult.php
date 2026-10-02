@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Drivers;
+namespace EInvoiceSdk\Drivers;
 
 final readonly class SubmitResult
 {

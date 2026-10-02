@@ -1,15 +1,15 @@
 <?php
 
-namespace Oriclab\EInvoice\Jobs;
+namespace EInvoiceSdk\Jobs;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Events\DocumentRejected;
+use EInvoiceSdk\Events\DocumentSubmitted;
+use EInvoiceSdk\Models\EInvoiceDocument;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Events\DocumentRejected;
-use Oriclab\EInvoice\Events\DocumentSubmitted;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
 use Throwable;
 
 class SubmitDocument implements ShouldBeUnique, ShouldQueue

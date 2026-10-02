@@ -1,11 +1,11 @@
 <?php
 
-namespace Oriclab\EInvoice\Contracts;
+namespace EInvoiceSdk\Contracts;
 
-use Oriclab\EInvoice\Data\Document;
-use Oriclab\EInvoice\Drivers\StatusResult;
-use Oriclab\EInvoice\Drivers\SubmitResult;
-use Oriclab\EInvoice\Models\EInvoiceSetting;
+use EInvoiceSdk\Data\Document;
+use EInvoiceSdk\Drivers\StatusResult;
+use EInvoiceSdk\Drivers\SubmitResult;
+use EInvoiceSdk\Models\EInvoiceSetting;
 
 /**
  * The only seam that talks to LHDN. Jobs and host apps never touch an SDK directly.

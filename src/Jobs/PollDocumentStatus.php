@@ -1,16 +1,16 @@
 <?php
 
-namespace Oriclab\EInvoice\Jobs;
+namespace EInvoiceSdk\Jobs;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Events\DocumentCancelled;
+use EInvoiceSdk\Events\DocumentRejected;
+use EInvoiceSdk\Events\DocumentValidated;
+use EInvoiceSdk\Models\EInvoiceDocument;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Events\DocumentCancelled;
-use Oriclab\EInvoice\Events\DocumentRejected;
-use Oriclab\EInvoice\Events\DocumentValidated;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
 
 /** Polls LHDN until the document leaves "submitted". Re-dispatch it (EInvoice::poll) if all attempts run out. */
 class PollDocumentStatus implements ShouldBeUnique, ShouldQueue

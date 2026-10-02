@@ -1,11 +1,11 @@
 <?php
 
-namespace Oriclab\EInvoice\Drivers;
+namespace EInvoiceSdk\Drivers;
 
+use EInvoiceSdk\Exceptions\EInvoiceException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Jiannius\Myinvois\Myinvois;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
 
 /**
  * The SDK client with our own token cache. The SDK caches a Carbon object with the token, which Laravel 13 apps

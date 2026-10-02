@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Enums;
+namespace EInvoiceSdk\Enums;
 
 /** LHDN e-invoice type codes. */
 enum DocumentType: string

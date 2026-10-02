@@ -1,9 +1,9 @@
 <?php
 
-namespace Oriclab\EInvoice\Data;
+namespace EInvoiceSdk\Data;
 
 use DateTimeInterface;
-use Oriclab\EInvoice\Enums\DocumentType;
+use EInvoiceSdk\Enums\DocumentType;
 
 /**
  * Our driver-neutral description of one e-invoice. Host models build this; drivers map it to their API.

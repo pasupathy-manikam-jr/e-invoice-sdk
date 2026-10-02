@@ -1,11 +1,11 @@
 <?php
 
-namespace Oriclab\EInvoice;
+namespace EInvoiceSdk;
 
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Drivers\FakeDriver;
+use EInvoiceSdk\Drivers\JianniusDriver;
 use Illuminate\Support\ServiceProvider;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Drivers\FakeDriver;
-use Oriclab\EInvoice\Drivers\JianniusDriver;
 
 class EInvoiceServiceProvider extends ServiceProvider
 {

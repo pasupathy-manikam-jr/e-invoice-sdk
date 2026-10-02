@@ -1,19 +1,19 @@
 <?php
 
-namespace Oriclab\EInvoice;
+namespace EInvoiceSdk;
 
+use EInvoiceSdk\Contracts\EInvoiceable;
+use EInvoiceSdk\Contracts\EInvoiceDriver;
+use EInvoiceSdk\Data\Document;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Exceptions\EInvoiceException;
+use EInvoiceSdk\Jobs\CancelDocument;
+use EInvoiceSdk\Jobs\PollDocumentStatus;
+use EInvoiceSdk\Jobs\SubmitDocument;
+use EInvoiceSdk\Models\EInvoiceDocument;
+use EInvoiceSdk\Models\EInvoiceSetting;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\ValidationException;
-use Oriclab\EInvoice\Contracts\EInvoiceable;
-use Oriclab\EInvoice\Contracts\EInvoiceDriver;
-use Oriclab\EInvoice\Data\Document;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
-use Oriclab\EInvoice\Jobs\CancelDocument;
-use Oriclab\EInvoice\Jobs\PollDocumentStatus;
-use Oriclab\EInvoice\Jobs\SubmitDocument;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
-use Oriclab\EInvoice\Models\EInvoiceSetting;
 
 /** Entry point for host apps. Resolve with app(EInvoice::class). Nothing here calls LHDN except validateTin(). */
 class EInvoice

@@ -1,16 +1,16 @@
 <?php
 
-namespace Oriclab\EInvoice\Tests;
+namespace EInvoiceSdk\Tests;
 
+use EInvoiceSdk\Drivers\JianniusDriver;
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Exceptions\EInvoiceException;
+use EInvoiceSdk\Tests\Fixtures\TestInvoice;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Jiannius\Myinvois\Helpers\Signature;
 use Jiannius\Myinvois\Helpers\UBL;
-use Oriclab\EInvoice\Drivers\JianniusDriver;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
-use Oriclab\EInvoice\Tests\Fixtures\TestInvoice;
 
 /** Offline: our mapping must satisfy the SDK's validator and survive UBL build + signing. */
 class JianniusDriverTest extends TestCase

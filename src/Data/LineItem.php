@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Data;
+namespace EInvoiceSdk\Data;
 
 final readonly class LineItem
 {

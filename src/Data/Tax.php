@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Data;
+namespace EInvoiceSdk\Data;
 
 /** One tax subtotal. `code` is the LHDN tax type code ('01' sales tax, '02' service tax, 'E' exempt, ...). */
 final readonly class Tax

@@ -1,6 +1,6 @@
 <?php
 
-namespace Oriclab\EInvoice\Enums;
+namespace EInvoiceSdk\Enums;
 
 enum Environment: string
 {

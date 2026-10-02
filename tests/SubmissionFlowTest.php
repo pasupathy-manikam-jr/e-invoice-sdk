@@ -1,22 +1,22 @@
 <?php
 
-namespace Oriclab\EInvoice\Tests;
+namespace EInvoiceSdk\Tests;
 
+use EInvoiceSdk\Drivers\StatusResult;
+use EInvoiceSdk\Drivers\SubmitResult;
+use EInvoiceSdk\EInvoice;
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Enums\Status;
+use EInvoiceSdk\Events\DocumentCancelled;
+use EInvoiceSdk\Events\DocumentRejected;
+use EInvoiceSdk\Events\DocumentSubmitted;
+use EInvoiceSdk\Events\DocumentValidated;
+use EInvoiceSdk\Exceptions\EInvoiceException;
+use EInvoiceSdk\Models\EInvoiceDocument;
+use EInvoiceSdk\Tests\Fixtures\TestInvoice;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Validation\ValidationException;
-use Oriclab\EInvoice\Drivers\StatusResult;
-use Oriclab\EInvoice\Drivers\SubmitResult;
-use Oriclab\EInvoice\EInvoice;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Enums\Status;
-use Oriclab\EInvoice\Events\DocumentCancelled;
-use Oriclab\EInvoice\Events\DocumentRejected;
-use Oriclab\EInvoice\Events\DocumentSubmitted;
-use Oriclab\EInvoice\Events\DocumentValidated;
-use Oriclab\EInvoice\Exceptions\EInvoiceException;
-use Oriclab\EInvoice\Models\EInvoiceDocument;
-use Oriclab\EInvoice\Tests\Fixtures\TestInvoice;
 use RuntimeException;
 
 class SubmissionFlowTest extends TestCase

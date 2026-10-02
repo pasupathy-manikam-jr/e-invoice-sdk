@@ -1,8 +1,8 @@
 <?php
 
-namespace Oriclab\EInvoice\Contracts;
+namespace EInvoiceSdk\Contracts;
 
-use Oriclab\EInvoice\Data\Document;
+use EInvoiceSdk\Data\Document;
 
 /** Implemented by any Eloquent model that can be issued as an e-invoice (invoice, credit note, POS sale, consolidated batch). */
 interface EInvoiceable

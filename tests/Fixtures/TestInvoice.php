@@ -1,16 +1,16 @@
 <?php
 
-namespace Oriclab\EInvoice\Tests\Fixtures;
+namespace EInvoiceSdk\Tests\Fixtures;
 
+use EInvoiceSdk\Concerns\HasEInvoices;
+use EInvoiceSdk\Contracts\EInvoiceable;
+use EInvoiceSdk\Data\Document;
+use EInvoiceSdk\Data\LineItem;
+use EInvoiceSdk\Data\Party;
+use EInvoiceSdk\Data\Tax;
+use EInvoiceSdk\Enums\DocumentType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use Oriclab\EInvoice\Concerns\HasEInvoices;
-use Oriclab\EInvoice\Contracts\EInvoiceable;
-use Oriclab\EInvoice\Data\Document;
-use Oriclab\EInvoice\Data\LineItem;
-use Oriclab\EInvoice\Data\Party;
-use Oriclab\EInvoice\Data\Tax;
-use Oriclab\EInvoice\Enums\DocumentType;
 
 /**
  * @property string $number

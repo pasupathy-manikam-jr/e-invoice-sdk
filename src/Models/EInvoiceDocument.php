@@ -1,16 +1,16 @@
 <?php
 
-namespace Oriclab\EInvoice\Models;
+namespace EInvoiceSdk\Models;
 
+use EInvoiceSdk\Contracts\EInvoiceable;
+use EInvoiceSdk\Enums\DocumentType;
+use EInvoiceSdk\Enums\Environment;
+use EInvoiceSdk\Enums\Status;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
-use Oriclab\EInvoice\Contracts\EInvoiceable;
-use Oriclab\EInvoice\Enums\DocumentType;
-use Oriclab\EInvoice\Enums\Environment;
-use Oriclab\EInvoice\Enums\Status;
 
 /**
  * @property int $id

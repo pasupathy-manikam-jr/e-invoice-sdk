@@ -17,14 +17,14 @@
         "larastan/larastan": "^3.9"
     },
     "autoload": {
-        "psr-4": { "Oriclab\\EInvoice\\": "src/" }
+        "psr-4": { "EInvoiceSdk\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Oriclab\\EInvoice\\Tests\\": "tests/" }
+        "psr-4": { "EInvoiceSdk\\Tests\\": "tests/" }
     },
     "extra": {
         "laravel": {
-            "providers": ["Oriclab\\EInvoice\\EInvoiceServiceProvider"]
+            "providers": ["EInvoiceSdk\\EInvoiceServiceProvider"]
         }
     },
     "scripts": {
