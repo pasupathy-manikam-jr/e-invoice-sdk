@@ -8,12 +8,15 @@ use EInvoiceSdk\Events\DocumentCancelled;
 use EInvoiceSdk\Events\DocumentRejected;
 use EInvoiceSdk\Events\DocumentValidated;
 use EInvoiceSdk\Models\EInvoiceDocument;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-/** Polls LHDN until the document leaves "submitted". Re-dispatch it (EInvoice::poll) if all attempts run out. */
-class PollDocumentStatus implements ShouldBeUnique, ShouldQueue
+/**
+ * Polls LHDN until the document leaves "submitted". Re-dispatch it (EInvoice::poll) if all attempts run out.
+ * Not unique: a poll only reads LHDN and applies the same result twice harmlessly, and on the sync connection
+ * a released job never completes, so a unique lock would block every later poll.
+ */
+class PollDocumentStatus implements ShouldQueue
 {
     use Queueable;
 
@@ -22,11 +25,6 @@ class PollDocumentStatus implements ShouldBeUnique, ShouldQueue
     public function __construct(public int $documentId)
     {
         $this->onQueue(config('einvoice.queue'));
-    }
-
-    public function uniqueId(): string
-    {
-        return (string) $this->documentId;
     }
 
     public function handle(EInvoiceDriver $driver): void

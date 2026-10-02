@@ -219,4 +219,17 @@ class SubmissionFlowTest extends TestCase
         $this->expectException(EInvoiceException::class);
         $this->einvoice()->validateTin(TestInvoice::SUPPLIER_TIN, 'C20830570210', 'FOO', '1');
     }
+
+    public function test_on_the_sync_connection_a_later_poll_still_runs(): void
+    {
+        $this->setting();
+        $this->driver->statusResult = new StatusResult(Status::Submitted);
+        $record = $this->einvoice()->submit(TestInvoice::create(['number' => 'INV-1']))->refresh();
+        $this->assertSame(Status::Submitted, $record->status);
+
+        $this->driver->statusResult = null;
+        $this->einvoice()->poll($record);
+
+        $this->assertSame(Status::Valid, $record->refresh()->status);
+    }
 }
